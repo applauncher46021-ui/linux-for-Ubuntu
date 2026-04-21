@@ -48,3 +48,6 @@ RUN sudo ln -s /usr/share/novnc /home/$USER/novnc
 EXPOSE $NOVNC_PORT
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+
+COPY start.sh /home/ubuntu/start.sh
+RUN chmod +x /home/ubuntu/start.sh
