@@ -1,16 +1,15 @@
 {
-  "name": "Ubuntu con noVNC",
+  "name": "Ubuntu noVNC Manual",
   "build": {
     "dockerfile": "Dockerfile"
   },
-"forwardPorts": [80],
-"portsAttributes": {
-  "80": {
-    "label": "noVNC Web Desktop",
-    "onAutoForward": "openBrowser"
-  }
-}
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "noVNC Desktop",
+      "onAutoForward": "openBrowser"
+    }
   },
-  "postCreateCommand": "/home/ubuntu/start.sh",
+  "postCreateCommand": "sudo service supervisor start || true",
   "remoteUser": "ubuntu"
 }
