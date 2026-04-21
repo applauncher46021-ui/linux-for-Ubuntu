@@ -45,3 +45,10 @@ USER $USER
 WORKDIR /home/$USER
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+
+# Crear xstartup para iniciar Xfce
+RUN echo '#!/bin/bash\n\
+xrdb $HOME/.Xresources\n\
+startxfce4 &\n' > /home/$USER/.vnc/xstartup && \
+    chmod +x /home/$USER/.vnc/xstartup && \
+    chown $USER:$USER /home/$USER/.vnc/xstartup
