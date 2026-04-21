@@ -3,12 +3,13 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "forwardPorts": [6080],
-  "portsAttributes": {
-    "6080": {
-      "label": "noVNC Web Desktop",
-      "onAutoForward": "openBrowser"
-    }
+"forwardPorts": [80],
+"portsAttributes": {
+  "80": {
+    "label": "noVNC Web Desktop",
+    "onAutoForward": "openBrowser"
+  }
+}
   },
   "postCreateCommand": "/home/ubuntu/start.sh",
   "remoteUser": "ubuntu"
