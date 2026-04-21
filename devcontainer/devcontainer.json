@@ -1,1 +1,15 @@
-
+{
+  "name": "Ubuntu con noVNC",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "noVNC Web Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "sudo service supervisor start",
+  "remoteUser": "ubuntu"
+}
