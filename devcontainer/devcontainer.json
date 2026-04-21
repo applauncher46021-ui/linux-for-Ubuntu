@@ -10,6 +10,6 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "sudo service supervisor start",
+  "postCreateCommand": "/home/ubuntu/start.sh",
   "remoteUser": "ubuntu"
 }
